@@ -1,0 +1,243 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f0f4f8 100%);
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-top: 80px;
+}
+
+.app-title {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1a73e8;
+  letter-spacing: 1px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.weather-app {
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  width: 100%;
+  padding: 48px;
+  margin: 20px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-bar input {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 24px 0 0 24px;
+  background-color: #f6f8fa;
+  flex: 1;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.search-bar input:focus {
+  background-color: #eef2f6;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0 24px 24px 0;
+  background-color: #1a73e8;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-bar button:hover {
+  background-color: #1557b0;
+}
+
+.unit-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unit-toggle label {
+  font-size: 0.9rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 48px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: background-color 0.2s ease;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+input:checked + .slider {
+  background-color: #1a73e8;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.current-weather .icon {
+  font-size: 6rem;
+  color: #1a73e8;
+  background-color: #e6efff;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.current-weather h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.current-weather .temperature {
+  font-size: 4.5rem;
+  font-weight: 300;
+  color: #1a73e8;
+}
+
+.current-weather .condition {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.current-weather .details {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .weather-app {
+    padding: 24px;
+  }
+
+  .app-title {
+    font-size: 1.8rem;
+    padding: 10px 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .current-weather h1 {
+    font-size: 2rem;
+  }
+
+  .current-weather .temperature {
+    font-size: 3.5rem;
+  }
+
+  .current-weather .icon {
+    font-size: 4.5rem;
+    width: 90px;
+    height: 90px;
+  }
+}
