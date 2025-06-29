@@ -240,3 +240,18 @@ input:checked + .slider:before {
     height: 90px;
   }
 }
+
+.loading {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: #eeeeee;
+  background-color: #000000b2;
+  padding: 50px 100px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

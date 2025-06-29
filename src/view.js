@@ -2,19 +2,20 @@ import { getWeather } from "./model";
 import { fromLocalStorage } from "./storage";
 
 export function getCity() {
-  console.log("getCity called");
+  // console.log("getCity called");
   const lastCity = fromLocalStorage("lastCity");
   const cityInput = document.querySelector("#city-input");
   return cityInput?.value.trim() || lastCity || "Lusaka";
 }
 
 export async function renderWeatherData(city, unitGroup) {
-  console.log(
+  showLoader();
+  /*console.log(
     "renderWeatherData called with city:",
     city,
     "and unitGroup:",
     unitGroup
-  );
+  );*/
   const elements = {
     cityName: document.querySelector("#city-name"),
     temperature: document.querySelector("#temperature"),
@@ -28,16 +29,16 @@ export async function renderWeatherData(city, unitGroup) {
 
   try {
     const weather = await getWeather(city);
-    console.log("Weather data received:", weather);
+    // console.log("Weather data received:", weather);
     if (!weather || !weather.currentConditions) {
       throw new Error("Invalid weather data received");
     }
-    console.log(
+    /*console.log(
       "Rendering weather data for city:",
       city,
       "with unit group:",
       unitGroup
-    );
+    );*/
 
     // Update UI with weather data
     elements.cityName.textContent = weather.address;
@@ -53,6 +54,8 @@ export async function renderWeatherData(city, unitGroup) {
   } catch (error) {
     console.error("Error rendering weather data:", error.message);
     renderError("City not found. Try again with a valid city Name.");
+  } finally {
+    hideLoader(); // Always hide loader, even on error
   }
 }
 
@@ -94,4 +97,16 @@ export function clearError() {
   } else {
     console.warn("Error message element not found in the DOM.");
   }
+}
+
+function showLoader() {
+  const loader = document.querySelector("#loading");
+  if (loader) loader.style.display = "block";
+  document.querySelector("main").setAttribute("aria-busy", "true");
+}
+
+function hideLoader() {
+  const loader = document.querySelector("#loading");
+  if (loader) loader.style.display = "none";
+  document.querySelector("main").setAttribute("aria-busy", "false");
 }

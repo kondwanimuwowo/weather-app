@@ -3,7 +3,7 @@ import { getCity, renderWeatherData, renderError, clearError } from "./view";
 import { toLocalStorage, fromLocalStorage } from "./storage";
 
 export async function initApp() {
-  console.log("Initializing App...");
+  // console.log("Initializing App...");
   const city = (await fromLocalStorage("lastCity")) || "Lusaka";
   const unitGroup = (await fromLocalStorage("unitGroup")) || "metric";
   handleSearch();
@@ -21,7 +21,7 @@ export async function handleSearch() {
       const city = getCity();
       const unitGroup = (await fromLocalStorage("unitGroup")) || "metric";
       if (city) {
-        console.log(`Searching for city: ${city}`);
+        // console.log(`Searching for city: ${city}`);
         await renderWeatherData(city, unitGroup);
       } else {
         console.error("No valid city provided");
@@ -41,10 +41,10 @@ export async function handleSearch() {
       try {
         const city = getCity();
         if (city) {
-          console.log(`Searching for city: ${city}`);
+          // console.log(`Searching for city: ${city}`);
           await renderWeatherData(city);
         } else {
-          console.log("No valid city provided");
+          // console.log("No valid city provided");
         }
         cityInput.value = "";
       } catch (error) {
@@ -54,7 +54,7 @@ export async function handleSearch() {
       }
     }
   });
-  console.log("Search handler active");
+  // console.log("Search handler active");
 }
 
 export async function handleUnitToggling() {
@@ -65,7 +65,7 @@ export async function handleUnitToggling() {
 
     unitSwitch.addEventListener("change", async () => {
       clearError();
-      console.log("Unit switch changed:", unitSwitch.checked ? "US" : "Metric");
+      // console.log("Unit switch changed:", unitSwitch.checked ? "US" : "Metric");
       const city = (await fromLocalStorage("lastCity")) || "Lusaka";
       const unitGroup = unitSwitch.checked ? "us" : "metric";
       await toLocalStorage("unitGroup", unitGroup);
@@ -76,5 +76,5 @@ export async function handleUnitToggling() {
     console.error("Error in handleUnitToggling:", error);
     renderError("Failed to toggle unit group: " + error);
   }
-  console.log("toggle handler active");
+  // console.log("toggle handler active");
 }

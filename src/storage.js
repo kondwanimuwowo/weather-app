@@ -4,7 +4,7 @@ export async function toLocalStorage(key, value) {
       value = JSON.stringify(value);
     }
     localStorage.setItem(key, value);
-    console.log(`Stored ${key} in localStorage`);
+    // console.log(`Stored ${key} in localStorage`);
   } catch (error) {
     console.error(`Failed to store ${key} in localStorage:`, error.message);
     throw new Error(`Failed to store ${key} in localStorage`);
@@ -15,7 +15,7 @@ export async function fromLocalStorage(key) {
   try {
     const value = localStorage.getItem(key);
     if (value === null) {
-      console.warn(`No value found for key: ${key}`);
+      // console.warn(`No value found for key: ${key}`);
       return null;
     }
     try {
@@ -35,7 +35,7 @@ export async function fromLocalStorage(key) {
 export function removeFromLocalStorage(key) {
   try {
     localStorage.removeItem(key);
-    console.log(`Removed ${key} from localStorage`);
+    // console.log(`Removed ${key} from localStorage`);
   } catch (error) {
     console.error(`Failed to remove ${key} from localStorage:`, error.message);
     throw new Error(`Failed to remove ${key} from localStorage`);

@@ -11,14 +11,14 @@ const API_URL =
   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
 
 async function fetchWeatherData(city = getCity(), range, unitGroup) {
-  console.log(
+  /*console.log(
     "Fetching weather data for city:",
     city,
     "with range:",
     range,
     "and unit group:",
     unitGroup
-  );
+  );*/
 
   try {
     const response = await fetch(
@@ -40,12 +40,12 @@ async function fetchWeatherData(city = getCity(), range, unitGroup) {
 
 export async function getWeather(city = getCity(), range = "today", unitGroup) {
   unitGroup = unitGroup || (await fromLocalStorage("unitGroup")) || "metric";
-  console.log(
+  /*console.log(
     "getWeather called with city:",
     city,
     "and unitGroup:",
     unitGroup
-  );
+  );*/
   if (!city?.trim() || typeof city !== "string") {
     throw new Error("City name must be a non-empty string");
   }
@@ -54,8 +54,8 @@ export async function getWeather(city = getCity(), range = "today", unitGroup) {
   const cached = await fromLocalStorage(cacheKey);
 
   if (cached && Date.now() - cached.timestamp < 10 * 60 * 1000) {
-    console.log("Using cached data for", cacheKey);
-    console.log("Cached data:", cached.data);
+    // console.log("Using cached data for", cacheKey);
+    // console.log("Cached data:", cached.data);
     // Update the last searched city in local storage
     await toLocalStorage("lastCity", city);
     return cached.data;
@@ -81,13 +81,13 @@ export async function getWeather(city = getCity(), range = "today", unitGroup) {
       },
     } = weatherData;
 
-    console.log("Data Fetched", {
+    /*console.log("Data Fetched", {
       currentTemp,
       currentHumidity,
       currentWindspeed,
       currentConditions,
       weatherIcon,
-    });
+    });*/
     // Cache the fetched data
     await toLocalStorage(cacheKey, {
       timestamp: Date.now(),
