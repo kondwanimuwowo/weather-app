@@ -60,7 +60,7 @@ export async function getWeather(city = getCity(), range = "today", unitGroup) {
     await toLocalStorage("lastCity", city);
     return cached.data;
   }
-  console.log("No valid cache found for", cacheKey, ", fetching new data.");
+  // console.log("No valid cache found for", cacheKey, ", fetching new data.");
   try {
     const weatherData = await fetchWeatherData(city, range, unitGroup);
     if (!weatherData?.currentConditions) {
