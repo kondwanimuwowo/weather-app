@@ -1,7 +1,5 @@
 # Kuwala: A Modern Weather App
 
-![Kuwala Logo](public/favicon.png)
-
 **Kuwala** is a sleek, user-friendly weather application that provides real-time weather data for any city worldwide. Built with modern web technologies, it offers a responsive design, unit toggling (Celsius/Fahrenheit), local storage for user preferences, and robust error handling. Named after the Bemba word for "light" or "shine," Kuwala aims to bring clarity and simplicity to weather forecasting.
 
 ## Features
@@ -14,7 +12,8 @@
 - **Error Handling**: Displays user-friendly error messages for invalid cities or API failures.
 - **Font Awesome Icons**: Dynamic weather icons for visual appeal.
 
-*Future Features (Planned)*:
+_Future Features (Planned)_:
+
 - 5-day weather forecast display.
 - Severe weather alerts.
 - Dark/light theme switching for personalized UX.
@@ -26,7 +25,7 @@ Check out the live demo at [https://kondwanimuwowo.github.io/weather-app/](https
 ## Screenshots
 
 ![Kuwala Screenshot](public/screenshot.png)  
-*Current weather display for Lusaka with unit toggle and search bar.*
+_Current weather display for Lusaka with unit toggle and search bar._
 
 ## Tech Stack
 
@@ -40,23 +39,28 @@ Check out the live demo at [https://kondwanimuwowo.github.io/weather-app/](https
 ## Installation and Setup
 
 ### Prerequisites
+
 - [Node.js](https://nodejs.org/) (v16 or higher)
 - [npm](https://www.npmjs.com/) (v8 or higher)
 - A [Visual Crossing API key](https://www.visualcrossing.com/sign-up)
 
 ### Steps
+
 1. **Clone the Repository**:
+
    ```bash
    git clone https://github.com/kondwanimuwowo/weather-app.git
    cd weather-app
    ```
 
 2. **Install Dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Set Up API Key**:
+
    - Add your Visual Crossing API key to `model.js`:
      ```javascript
      const API_KEY = "your-api-key-here";
@@ -64,15 +68,19 @@ Check out the live demo at [https://kondwanimuwowo.github.io/weather-app/](https
    - Replace `your-api-key-here` with your actual API key.
 
 4. **Run Locally**:
+
    ```bash
    npm run dev
    ```
+
    Open `http://localhost:5173/weather-app/` in your browser.
 
 5. **Build for Production**:
+
    ```bash
    npm run build
    ```
+
    The production-ready files will be in the `dist` folder.
 
 6. **Deploy to GitHub Pages**:
@@ -120,6 +128,7 @@ Building "Kuwala" was a rewarding journey that came with challenges, overcome th
 ## Future Improvements
 
 To elevate "Kuwala" to a truly world-class app, the following features are planned:
+
 - **5-Day Forecast**: Display a 5-day forecast using the `days` array from the API, styled as responsive cards.
 - **Weather Alerts**: Show severe weather alerts for safety, leveraging the API’s `alerts` data.
 - **Theme Switching**: Add a dark/light mode toggle with `localStorage` persistence.
@@ -129,6 +138,7 @@ To elevate "Kuwala" to a truly world-class app, the following features are plann
 ## Contributing
 
 Contributions are welcome! To contribute:
+
 1. Fork the repository.
 2. Create a feature branch (`git checkout -b feature/your-feature`).
 3. Commit your changes (`git commit -m "Add your feature"`).
@@ -154,4 +164,4 @@ For questions or feedback, reach out via [GitHub Issues](https://github.com/kond
 
 ---
 
-*Kuwala* is a passion project built to deliver accurate, accessible, and delightful weather updates. Thank you for exploring it!
+_Kuwala_ is a passion project built to deliver accurate, accessible, and delightful weather updates. Thank you for exploring it!
