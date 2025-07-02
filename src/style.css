@@ -215,14 +215,14 @@ input:checked + .slider:hover {
 
 /* City name styling */
 .current-weather h1 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #555;
 }
 
 /* Temperature styling */
 .current-weather .temperature {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 600;
   color: #1a73e8;
 }
@@ -233,7 +233,7 @@ input:checked + .slider:hover {
   color: #555;
   font-weight: 500;
   margin-bottom: 14px;
-  padding: 6px 20px;
+  padding: 8px 20px;
   border-radius: 50px;
   background-color: #ddd;
 }
@@ -242,9 +242,18 @@ input:checked + .slider:hover {
 .current-weather .details {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #555;
+}
+
+.humidity {
+  padding: 6px 10px 6px 5px;
+  border-right: 1px solid #1264c8;
+}
+
+.wind {
+  padding: 6px 5px 6px 10px;
+  border-left: 1px solid #1264c8;
 }
 
 /* Responsive styles for smaller screens */
