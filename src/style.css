@@ -337,7 +337,7 @@ input:checked + .slider:hover {
 .social-links {
   position: fixed;
   bottom: 20px;
-  left: 10px;
+  right: 10px;
   display: flex;
   flex-direction: column;
   gap: 15px;
