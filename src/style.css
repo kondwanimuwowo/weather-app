@@ -23,7 +23,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  padding-top: 80px;
+  padding-top: 60px;
   animation: fadeIn 0.4s ease-in-out;
 }
 
@@ -62,8 +62,8 @@ main {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   max-width: 600px;
   width: 100%;
-  padding: 48px;
-  margin: 20px;
+  padding: 46px;
+  margin: 18px;
   text-align: center;
 }
 
@@ -72,7 +72,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -210,28 +210,32 @@ input:checked + .slider:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 /* City name styling */
 .current-weather h1 {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 500;
   color: #555;
 }
 
 /* Temperature styling */
 .current-weather .temperature {
-  font-size: 4.5rem;
-  font-weight: 300;
+  font-size: 2.5rem;
+  font-weight: 600;
   color: #1a73e8;
 }
 
 /* Weather condition text */
 .current-weather .condition {
-  font-size: 1.25rem;
-  color: #666;
-  margin-bottom: 16px;
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 14px;
+  padding: 6px 20px;
+  border-radius: 50px;
+  background-color: #ddd;
 }
 
 /* Weather details (humidity, wind) */
@@ -344,8 +348,8 @@ input:checked + .slider:hover {
 .social-links a {
   color: #1a73e8;
   background-color: #ffffff;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -353,7 +357,7 @@ input:checked + .slider:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* Social link hover effect */
