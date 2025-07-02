@@ -1,4 +1,7 @@
+/* Import FontAwesome icons */
 @import "@fortawesome/fontawesome-free/css/all.css";
+
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +9,7 @@
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* Body background and layout */
 body {
   background: linear-gradient(135deg, #e0e7ff 0%, #f0f4f8 100%);
   display: flex;
@@ -13,6 +17,7 @@ body {
   height: 100dvh;
 }
 
+/* Main content centering and animation */
 main {
   display: flex;
   justify-content: center;
@@ -22,6 +27,7 @@ main {
   animation: fadeIn 0.4s ease-in-out;
 }
 
+/* App title styling */
 .app-title {
   position: fixed;
   left: 50%;
@@ -31,14 +37,15 @@ main {
   color: #1a73e8;
   letter-spacing: 1px;
   background-color: #fff;
-  padding: 10px 20px;
-  border-radius: 0 0 24px 24px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  padding: 8px 24px;
+  border-radius: 0 0 28px 28px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
   animation: fadeIn 2s ease-in-out;
   transition: transform 0.2s ease;
   z-index: 10;
 }
 
+/* Fade-in animation keyframes */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -48,6 +55,7 @@ main {
   }
 }
 
+/* Weather app card styling */
 .weather-app {
   background-color: #ffffff;
   border-radius: 24px;
@@ -59,6 +67,7 @@ main {
   text-align: center;
 }
 
+/* Header layout for search and unit toggle */
 .header {
   display: flex;
   justify-content: space-between;
@@ -68,6 +77,7 @@ main {
   gap: 16px;
 }
 
+/* Search bar layout */
 .search-bar {
   display: flex;
   align-items: center;
@@ -75,6 +85,7 @@ main {
   max-width: 400px;
 }
 
+/* Search input styling */
 .search-bar input {
   padding: 10px 20px;
   font-size: 0.9rem;
@@ -86,10 +97,12 @@ main {
   transition: background-color 0.2s ease;
 }
 
+/* Search input focus effect */
 .search-bar input:focus {
   background-color: #eef2f6;
 }
 
+/* Search button styling */
 .search-bar button {
   padding: 10px 20px;
   font-size: 0.9rem;
@@ -101,34 +114,40 @@ main {
   transition: background-color 0.2s ease;
 }
 
+/* Search button hover effect */
 .search-bar button:hover {
   background-color: #1557b0;
 }
 
+/* Unit toggle container */
 .unit-toggle {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+/* Unit toggle label styling */
 .unit-toggle label {
   font-size: 0.9rem;
   color: #444;
   cursor: pointer;
 }
 
+/* Toggle switch container */
 .toggle-switch {
   position: relative;
   width: 48px;
   height: 24px;
 }
 
+/* Hide the default checkbox */
 .toggle-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
+/* Custom slider background */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -141,6 +160,7 @@ main {
   transition: background-color 0.2s ease;
 }
 
+/* Slider knob */
 .slider:before {
   position: absolute;
   content: "";
@@ -153,14 +173,25 @@ main {
   transition: transform 0.2s ease;
 }
 
+/* Slider background when checked */
 input:checked + .slider {
   background-color: #1a73e8;
 }
 
+/* Move slider knob when checked */
 input:checked + .slider:before {
   transform: translateX(24px);
 }
 
+/* Slider hover effect */
+.slider:hover {
+  background-color: #aaa;
+}
+input:checked + .slider:hover {
+  background-color: #1264c8;
+}
+
+/* Current weather section layout */
 .current-weather {
   display: flex;
   flex-direction: column;
@@ -168,6 +199,7 @@ input:checked + .slider:before {
   gap: 16px;
 }
 
+/* Weather icon styling */
 .current-weather .icon {
   font-size: 6rem;
   color: #1a73e8;
@@ -181,24 +213,28 @@ input:checked + .slider:before {
   margin-bottom: 16px;
 }
 
+/* City name styling */
 .current-weather h1 {
   font-size: 2rem;
   font-weight: 600;
   color: #555;
 }
 
+/* Temperature styling */
 .current-weather .temperature {
   font-size: 4.5rem;
   font-weight: 300;
   color: #1a73e8;
 }
 
+/* Weather condition text */
 .current-weather .condition {
   font-size: 1.25rem;
   color: #666;
   margin-bottom: 16px;
 }
 
+/* Weather details (humidity, wind) */
 .current-weather .details {
   display: flex;
   justify-content: center;
@@ -207,6 +243,7 @@ input:checked + .slider:before {
   color: #555;
 }
 
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .weather-app {
     padding: 24px;
@@ -241,17 +278,86 @@ input:checked + .slider:before {
   }
 }
 
+/* Loading overlay styles */
 .loading {
   position: fixed;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  color: #eeeeee;
-  background-color: #000000b2;
-  padding: 50px 100px;
-  border-radius: 12px;
+  font-size: 1.25rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+  background-color: #1557b0;
+  padding: 1.5rem 2.5rem;
+  border-radius: 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(50px);
+  z-index: 9999;
+  animation: fadesIn 0.3s ease-in-out;
+}
+
+/* Spinner for visual feedback */
+.loading::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ffffff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Fade-in animation for the loading container */
+@keyframes fadesIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Spinner rotation animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Social links bar at the bottom */
+.social-links {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+/* Social link icon styles */
+.social-links a {
+  color: #1a73e8;
+  background-color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Social link hover effect */
+.social-links a:hover {
+  background-color: #1a73e8;
+  color: white;
 }

@@ -60,21 +60,28 @@ export async function handleSearch() {
 export async function handleUnitToggling() {
   try {
     const unitSwitch = document.querySelector("#unit-switch");
+    const slider = document.querySelector(".toggle-switch .slider");
     const savedUnit = await fromLocalStorage("unitGroup");
     unitSwitch.checked = savedUnit === "us";
 
+    // Handle checkbox change
     unitSwitch.addEventListener("change", async () => {
       clearError();
-      // console.log("Unit switch changed:", unitSwitch.checked ? "US" : "Metric");
       const city = (await fromLocalStorage("lastCity")) || "Lusaka";
       const unitGroup = unitSwitch.checked ? "us" : "metric";
       await toLocalStorage("unitGroup", unitGroup);
       renderWeatherData(city, unitGroup);
-      console.log(`Unit group set to: ${unitGroup}`);
+      // console.log(`Unit group set to: ${unitGroup}`);
+    });
+
+    // Handle slider click
+    slider.addEventListener("click", () => {
+      unitSwitch.checked = !unitSwitch.checked;
+      const changeEvent = new Event("change");
+      unitSwitch.dispatchEvent(changeEvent);
     });
   } catch (error) {
     console.error("Error in handleUnitToggling:", error);
     renderError("Failed to toggle unit group: " + error);
   }
-  // console.log("toggle handler active");
 }
