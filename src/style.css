@@ -240,7 +240,8 @@ input:checked + .slider:hover {
 
 /* Weather details (humidity, wind) */
 .current-weather .details {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   font-size: 1rem;
   color: #555;
